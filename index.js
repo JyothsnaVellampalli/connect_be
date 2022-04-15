@@ -25,6 +25,11 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
+app.get('/', async (req, res) => {
+    res.send('Welcome');
+});
+
+
 const storage = multer.diskStorage({
     destination : (req, file, cb)=>{
         cb(null, 'public/images');
